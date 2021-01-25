@@ -81,3 +81,191 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.ui 2 2 2021-01-25 07:32:22.441
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2021-01-26 00:00:50.261 -----------------------------------------------
+eclipse.buildId=4.9.0.202012132054
+java.version=15.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-01-26 00:02:44.105
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2021-01-26 00:02:46.299
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-01-26 00:02:46.299
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@60ba6631,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d2950ed,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:04.007
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:04.022
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@551ff5c[org.springframework.tooling.boot.ls:1.24.0.202012131915(id=578)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:04.022
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:04.355
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-01-26 00:03:07.527
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Desktop'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-01-26 00:03:15.571
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1950)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2085)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.013
+!MESSAGE Boot LS startup time from start to initialized: 21969ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.156
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.wDNuUrKDisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.164
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.174
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.182
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.190
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.198
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.wDNuUrKD => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.212
+!MESSAGE classpath=67 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.224
+!MESSAGE buffering callback sts4.classpath.wDNuUrKD mobile-app-ws false 67
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.233
+!MESSAGE executing callback sts4.classpath.wDNuUrKD 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:03:26.275
+!MESSAGE executing callback sts4.classpath.wDNuUrKD SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2021-01-26 00:04:04.489
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:39.072
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:39.111
+!MESSAGE classpath=71 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:39.124
+!MESSAGE buffering callback sts4.classpath.wDNuUrKD mobile-app-ws false 71
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:39.134
+!MESSAGE executing callback sts4.classpath.wDNuUrKD 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:39.149
+!MESSAGE executing callback sts4.classpath.wDNuUrKD SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:46.947
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:46.959
+!MESSAGE classpath=71 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:46.986
+!MESSAGE buffering callback sts4.classpath.wDNuUrKD mobile-app-ws false 71
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:46.992
+!MESSAGE executing callback sts4.classpath.wDNuUrKD 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:47.002
+!MESSAGE executing callback sts4.classpath.wDNuUrKD SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:50.263
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:50.315
+!MESSAGE classpath=71 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:50.330
+!MESSAGE buffering callback sts4.classpath.wDNuUrKD mobile-app-ws false 71
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:50.344
+!MESSAGE executing callback sts4.classpath.wDNuUrKD 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:50.360
+!MESSAGE executing callback sts4.classpath.wDNuUrKD SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:53.337
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:53.734
+!MESSAGE classpath=71 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:53.790
+!MESSAGE buffering callback sts4.classpath.wDNuUrKD mobile-app-ws false 71
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:53.801
+!MESSAGE executing callback sts4.classpath.wDNuUrKD 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:08:53.843
+!MESSAGE executing callback sts4.classpath.wDNuUrKD SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:30:20.978
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:30:21.021
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:30:21.045
+!MESSAGE buffering callback sts4.classpath.wDNuUrKD mobile-app-ws false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:30:21.076
+!MESSAGE executing callback sts4.classpath.wDNuUrKD 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:30:21.097
+!MESSAGE executing callback sts4.classpath.wDNuUrKD SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:30:30.123
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:30:30.137
+!MESSAGE classpath=76 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:30:30.147
+!MESSAGE buffering callback sts4.classpath.wDNuUrKD mobile-app-ws false 76
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:30:30.156
+!MESSAGE executing callback sts4.classpath.wDNuUrKD 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-26 00:30:30.171
+!MESSAGE executing callback sts4.classpath.wDNuUrKD SUCCESS [done]
