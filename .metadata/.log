@@ -33,3 +33,51 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:22.865
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:22.911
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@12447022[org.springframework.tooling.boot.ls:1.24.0.202012131915(id=578)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:22.953
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:23.331
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.478
+!MESSAGE Boot LS startup time from start to initialized: 5512ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.567
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.MtgzuveNisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.574
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.582
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.588
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.595
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.601
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.MtgzuveN => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.622
+!MESSAGE classpath=67 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.637
+!MESSAGE buffering callback sts4.classpath.MtgzuveN mobile-app-ws false 67
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.643
+!MESSAGE executing callback sts4.classpath.MtgzuveN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-25 07:31:28.700
+!MESSAGE executing callback sts4.classpath.MtgzuveN SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2021-01-25 07:32:22.441
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
