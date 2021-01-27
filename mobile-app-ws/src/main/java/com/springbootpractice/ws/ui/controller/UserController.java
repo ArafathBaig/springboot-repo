@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springbootpractice.ws.ui.model.Exception.UserServiceException;
 import com.springbootpractice.ws.ui.model.response.UserClass;
 import com.springbootpractice.ws.ui.request.UserDataRequestModel;
 import com.springbootpractice.ws.ui.response.UserDataResponseModel;
@@ -31,6 +32,8 @@ public class UserController {
 	@GetMapping(path = "/{userId}", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<UserClass> getUser(@PathVariable("userId") String userId) {
 		
+		if(true)
+			throw new UserServiceException("A USE exception");
 		if(!db.containsKey(userId))
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		
@@ -81,8 +84,10 @@ public class UserController {
 		
 	}
 	
-	@DeleteMapping
-	public String deleteUser() {
-		return "delete user";
+	@DeleteMapping(value="/{userId}")
+	public ResponseEntity<Void> deleteUser(@PathVariable String userId) {
+		db.remove(userId);
+		
+		return ResponseEntity.noContent().build();
 	}
 }
