@@ -1,5 +1,9 @@
 package com.springbootpractice.ws.ui.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
@@ -15,23 +19,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springbootpractice.ws.ui.model.request.UserDataRequestModel;
 import com.springbootpractice.ws.ui.model.response.UserClass;
+import com.springbootpractice.ws.ui.request.UserDataRequestModel;
+import com.springbootpractice.ws.ui.response.UserDataResponseModel;
 
 @RestController
 @RequestMapping("users")
 public class UserController {
 	
+	Map<String, UserClass> db = new HashMap<>();
 	@GetMapping(path = "/{userId}", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-	public ResponseEntity<UserClass> getUser(@PathVariable("userId") String id) {
-		UserClass returnValue = new UserClass();
+	public ResponseEntity<UserClass> getUser(@PathVariable("userId") String userId) {
 		
-		returnValue.setEmail("araf@gmail.com");
-		returnValue.setFirstName("firstName");
-		returnValue.setLastName("lastName");
-		returnValue.setUserId(id);
+		if(!db.containsKey(userId))
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		
-		return new ResponseEntity(HttpStatus.BAD_REQUEST);
+		UserClass returnValue = db.get(userId);
+
+		return new ResponseEntity(returnValue,HttpStatus.OK);
 		
 		
 	}
@@ -48,16 +53,32 @@ public class UserController {
 			produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<UserClass> createUser(@Valid @RequestBody UserDataRequestModel userDetails) {
 		UserClass returnValue = new UserClass();
-		returnValue.setEmail(userDetails.getEmail());
+		returnValue.setEmail(userDetails.getEmailId());
 		returnValue.setFirstName(userDetails.getFirstName());
 		returnValue.setLastName(userDetails.getLastName());
 		
+		String userId = UUID.randomUUID().toString();
+		
+		returnValue.setUserId(userId);
+		db.put(userId, returnValue);
 		return new ResponseEntity(returnValue, HttpStatus.CREATED);
 	}
 	
-	@PutMapping
-	public String updateUser() {
-		return "update user";
+	@PutMapping(value= "/{userId}",consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE},
+			produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+	public ResponseEntity<UserClass> updateUser(@Valid @RequestBody UserDataResponseModel userDetails,@PathVariable String userId) {
+		
+		if(!db.containsKey(userId)) {
+			new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		
+		UserClass user = db.get(userId);
+		
+		user.setFirstName(userDetails.getFirstName());
+		user.setLastName(userDetails.getLastName());
+		
+		return new ResponseEntity<>(user, HttpStatus.OK);
+		
 	}
 	
 	@DeleteMapping
