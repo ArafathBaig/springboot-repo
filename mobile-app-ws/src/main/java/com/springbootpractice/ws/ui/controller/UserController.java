@@ -2,10 +2,10 @@ package com.springbootpractice.ws.ui.controller;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -19,21 +19,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springbootpractice.ws.ui.model.Exception.UserServiceException;
 import com.springbootpractice.ws.ui.model.response.UserClass;
 import com.springbootpractice.ws.ui.request.UserDataRequestModel;
 import com.springbootpractice.ws.ui.response.UserDataResponseModel;
+import com.springbootpractice.ws.userservice.UserService;
 
 @RestController
 @RequestMapping("users")
 public class UserController {
 	
 	Map<String, UserClass> db = new HashMap<>();
+	
+	@Autowired
+	UserService userService;
+	
 	@GetMapping(path = "/{userId}", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<UserClass> getUser(@PathVariable("userId") String userId) {
 		
-		if(true)
-			throw new UserServiceException("A USE exception");
 		if(!db.containsKey(userId))
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		
@@ -55,16 +57,9 @@ public class UserController {
 	@PostMapping(consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE},
 			produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<UserClass> createUser(@Valid @RequestBody UserDataRequestModel userDetails) {
-		UserClass returnValue = new UserClass();
-		returnValue.setEmail(userDetails.getEmailId());
-		returnValue.setFirstName(userDetails.getFirstName());
-		returnValue.setLastName(userDetails.getLastName());
 		
-		String userId = UUID.randomUUID().toString();
-		
-		returnValue.setUserId(userId);
-		db.put(userId, returnValue);
-		return new ResponseEntity(returnValue, HttpStatus.CREATED);
+		UserClass user = userService.createUser(userDetails);
+		return new ResponseEntity<>(user,HttpStatus.OK);
 	}
 	
 	@PutMapping(value= "/{userId}",consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE},
