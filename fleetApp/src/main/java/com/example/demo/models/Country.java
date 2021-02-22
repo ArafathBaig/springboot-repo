@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 public class Country {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String code;
 	private String capital;
@@ -33,5 +33,4 @@ public class Country {
 	
 	@OneToMany(mappedBy="country")
 	private List<State> states;
-
 }
