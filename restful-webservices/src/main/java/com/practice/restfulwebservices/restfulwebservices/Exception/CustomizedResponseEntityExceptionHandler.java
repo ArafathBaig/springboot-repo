@@ -28,5 +28,13 @@ public class CustomizedResponseEntityExceptionHandler
 		ExceptionResponse exception = new ExceptionResponse(new Date() , ex.getMessage(), request.getDescription(false));
 		return new ResponseEntity(exception, HttpStatus.NOT_FOUND);
 	}
+	
+	@ExceptionHandler(PostNotFoundException.class)
+	public final ResponseEntity<Object> handlePostNotFoundExceptions(Exception ex, WebRequest request){
+		
+		ExceptionResponse exception = new ExceptionResponse(new Date() , ex.getMessage(), request.getDescription(false));
+		return new ResponseEntity(exception, HttpStatus.NOT_FOUND);
+	}
+
 
 }
