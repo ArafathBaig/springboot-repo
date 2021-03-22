@@ -70,8 +70,5 @@ public class CurrencyConversion {
 	public void setTotalCalculatedAmount(BigDecimal totalCalculatedAmount) {
 		this.totalCalculatedAmount = totalCalculatedAmount;
 	}
-	
-	
-	
 
 }
